@@ -12,8 +12,56 @@ pre{
     font-family: 'Poor Story',cursive;
 }
 
-#container{
+.nav_button{
+    padding:10pt;
+    font-family: 'Poor Story';
+    font-size:12pt;
+    border:none;
+    background-color:inherit;
+    color:white;
+    height: 100%;
+    width:150px;
+    float:right;
+}
+
+.nav_button ul li{
     position: relative;
+}
+
+.nav_button:hover{
+    color:yellow;
+    background-color: rgb(94,94,94);
+    border-radius: 2px;
+    
+}
+
+.nav_button:hover .subMenu{
+    height:100px;
+}
+
+.subMenu{
+    position: absolute;
+    height:0px;
+    overflow:hidden;
+    transition: height .2s;
+    margin-left: -55px;
+
+}
+
+.subMenuList{
+    text-decoration: none;
+    display:block;
+    width:150px;
+    font-size:12pt;
+    font-family:"Poor Story";
+    background-color:white;
+    color:black;
+    border-radius:10px;
+    border:solid 1px black;
+}
+
+#container{
+    position: absolute;
     margin-left: 10%;
     margin-right: 10%;
     width:80%;
@@ -21,11 +69,18 @@ pre{
 }
 
 #navigator{
-    width:75.9%;
+    width:76.7%;
     position:fixed;
     top:0;
     text-align: right;
     padding-right: 50px;
+    color:white;
+    margin-top:-10px;
+    border-radius: 0;
+    background-color:rgb(34,34,34);
+    border-color:rgb(34,34,34);
+
+    float:right;
 }
 
 #login{
@@ -60,15 +115,19 @@ pre{
     position: relative;
     top:0;
     background-color: darkorchid;
+    color:white;
     height:300px;
     width:100%;
     margin-bottom:0;
-    margin-top:30px;
+    margin-top:25px;
     font-family: 'Poor Story',cursive;
     font-size:70px;
     text-align:center;
-    background:url(tropical.jpg);
-    filter: hue-rotate(270deg); 
+    background-image:url("https://hdqwalls.com/wallpapers/windows-10-orange-stock.jpg");
+    background-size:100%;
+    background-position-y:45%; 
+    border-top-left-radius:0px; 
+    border-top-right-radius:0px; 
 }
 h1{
     filter: drop-shadow(10px 10px 9px deeppink);
@@ -83,6 +142,7 @@ h1{
     padding-top:20px;
     border: rgb(245, 147, 147) 5px;
     border-style: dotted;
+
 }
 
 #menulist{
