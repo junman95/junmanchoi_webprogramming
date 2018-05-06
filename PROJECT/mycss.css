@@ -5,6 +5,15 @@ pre{
     font-family: 'Poor Story',cursive;
 }
 
+a{
+    text-decoration:none;
+    color:white;
+}
+
+ul a{
+    color:black;
+}
+
 .object{
     border: 1px solid #bcbcbc;
     border-radius:10px;
@@ -114,7 +123,6 @@ pre{
 #header{
     position: relative;
     top:0;
-    background-color: darkorchid;
     color:white;
     height:300px;
     width:100%;
@@ -128,6 +136,31 @@ pre{
     background-position-y:45%; 
     border-top-left-radius:0px; 
     border-top-right-radius:0px; 
+}
+
+#header_s{
+    top:0;
+    color:white;
+    height:100px;
+    width:100%;
+    margin-bottom:0;
+    margin-top:25px;
+    font-family: 'Poor Story',cursive;
+    font-size:20px;
+    text-align:left;
+    background-image:url("https://hdqwalls.com/wallpapers/windows-10-orange-stock.jpg");
+    background-size:100%;
+    background-position-y:80%; 
+    border-top-left-radius:0px; 
+    border-top-right-radius:0px; 
+}
+
+#header_s h1{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.clear{
+    clear:left;
 }
 h1{
     filter: drop-shadow(10px 10px 9px deeppink);
@@ -149,13 +182,16 @@ h1{
     text-align:left;
 }
 
-#content{
+#content, #content_ppt{
     margin-top:5%;
     margin-bottom:5%;
     height:100%;
     width:70%;
-    float:right;
-    padding-top:20px;   
+    float:right; 
+}
+
+#content_ppt{
+    padding:20px;
 }
 
 #footer{
@@ -210,14 +246,22 @@ h1{
     width: 40%;
 }
 
-a:hover{position:relative; top:-1px; left:-1px}
+a:hover{
+    position:relative;
+    top:-1px;
+    left:-1px;
+    color:yellow;
+}
+li a:hover{
+    color:red;
+}
 a:visited{opacity:0.5}
 
 @media(max-width: 500px){
     #container{
         width: auto;
     }
-    #header{
+    #header #header_s{
         float:none;
         width: auto;
         font-size: 50px;
