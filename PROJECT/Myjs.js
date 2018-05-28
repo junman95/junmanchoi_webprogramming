@@ -1,99 +1,38 @@
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-
-//°øÀÇ ½ÃÀÛÀ§Ä¡
-var x = canvas.width / 2;
-var y = canvas.height - 50;
-var dx = 2; var dy = -2;//°øÀÇ ¼Óµµ¿Í ¹æÇâ
-var ballRadius = 10;
-//°øÀ» Ä¡´Â ÆĞµé ¼³Á¤
-var paddleHeight= 25;
-var paddleWidth = 75;
-var paddleX = (canvas.width - paddleWidth) / 2;
-//Å°ÀÔ·Â º¯¼ö
-var rightPressed = false;
-var leftPressed = false;
-
-
-function drawball() {
-    ctx.beginPath();
-    ctx.arc(x, y, 10, 0, Math.PI * 2);
-    ctx.fillStyle = "#0095DD";
-    ctx.fill();
-    ctx.closePath();
-}
-
-function changeBallDirection(x1, y1) {
-    if (x1==ballRadius || x1 == canvas.width-ballRadius)
-        dx = -dx;
-    if (y1 == ballRadius )
-        dy = -dy;
-    if(y1 + dy < ballRadius) {
-        dy = -dy;
-    } 
-    else if (y1 + dy > canvas.height - ballRadius-paddleHeight+3) {
-        if (x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
-        }
-        else {
-            return 1;
-        }
-    }
-}
-
-function drawPaddle() {
-    ctx.beginPath();
-    ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#0095DD";
-    ctx.fill();
-    ctx.closePath();
-}
-
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-
-
-function keyDownHandler(e){
-    if(e.keyCode==39){
-        rightPressed=true;
-    }
-    if(e.keyCode==37){
-        leftPressed=true;
-    }
-}
-
-function keyUpHandler(e){
-    if(e.keyCode==39){
-        rightPressed=false;
-    }
-    if(e.keyCode==37){
-        leftPressed=false;
-    }
-}
-
-function changePaddleDirection() {
-    if (rightPressed && paddleX < canvas.width - paddleWidth) {
-        paddleX += 7;
-    }
-    else if (leftPressed && paddleX > 0) {
-        paddleX -= 7;
-    }
-}
-
-function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if (changeBallDirection(x, y) == 1) {
-        alert("GAME OVER");
-        document.location.reload();
-
-    }
+/////////////////ì£¼ì  ë©”ë‰´ ì£¼ë¬¸/////////////////////////////////
+  function cancel(){
+    window.location.reload(true);
+  }
+  function order(){
+    var AMSG=tblno.value+"ë²ˆ í…Œì´ë¸”\n";
+    var TSUM=0;
     
-    drawball();
-    changePaddleDirection();
-    drawPaddle();
+    for(i=1;i<=6;i++){
+      var did="d"+i;
+      var dcnt=parseInt(document.getElementById(did).value);
+      var dval=parseInt(document.getElementById(did).alt);
+      var dtit=document.getElementById(did).title;
+      if(dcnt!==0){
+        TSUM+=dval*dcnt;
+        AMSG+=dtit+"("+dval+")*"+dcnt+"="+(dval*dcnt)+"\n";
+      }//if
+    }//for
+    AMSG=AMSG+"ì£¼ë¬¸í•©ê³„"+TSUM.toLocaleString();
+    
+    alert(AMSG);
+    
+  }//func
+  function init(){
+    var tn=location.href.split("tableno=")[1];
+    tblno.value=(tn!==""||tn!=="0"||tn!=="NaN")?tn:0;
+  }
+  function calc(n, v){
+    var tot=n.value*n.alt;
+   // alert(tot);
+    v.innerHTML=tot.toLocaleString();
+  }
 
-    x += dx;
-    y += dy;
-}
-
-setInterval(draw, 10);
+  /////////////////////////////////////////////////////////
+  function ytsong(yt){
+    var path="https://www.youtube.com/embed?autoplay=1&listType=search&list=MV+";
+    musicVideo.src=path+yt;
+  }

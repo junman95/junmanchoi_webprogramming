@@ -3,6 +3,7 @@
     <head>
         <title>MY WEBSITE JMC</title>
         <link rel=stylesheet type="text/css" href="mycss.css" />
+        <script type="text/javascript" src="Myjs.js"></script>
     </head>
     <body>
         
@@ -22,9 +23,11 @@
                 </ul>
             </div>
             <div class="object" id="content" >
-                <iframe id="musicVideo" width="640" height="360" src="http://www.youtube.com/embed/HSF3Ih5N2yU" frameborder="0" allowfullscreen></iframe>
-
-
+                유투브 노래방 <input type="text" id="yt"></input>
+                <button onclick="ytsong(yt.value)">노래 검색</button> 
+                <section>
+                    <iframe id="musicVideo" allowfullscreen></iframe>
+                </section>
             </div>
             <div class="object" id="navigator">
                 <p>

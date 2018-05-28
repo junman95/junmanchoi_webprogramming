@@ -1,0 +1,161 @@
+<html>
+        <meta charset="utf-8">
+    <head>
+        <title>MY WEBSITE JMC</title>
+        <link rel=stylesheet type="text/css" href="mycss.css" />
+        <script type="text/javascript" src="Myjs.js"></script>
+    </head>
+    <body>
+        
+        <div id="container">
+            <div class="object" id="header">
+                <h1>JMC.blog</h1>    
+            </div>
+            <div class="object" id="menu" >
+                <b style="font-size: 30px">Menu</b><br>
+                <ul id="menulist" type=none>
+                    <li><a href="login_form.html">Login</a></li>
+                    <li><a href="KWfestival.html">자바스크립트 연습</a></li>
+                    <li><a href="ptclub.html">발표자료</a></li>
+                    <li><a href="music1.html">뮤직스테이션</a></li>
+                </ul>
+            </div>
+            <div class="object" id="content" >
+                <nav class="festa">
+                    <select id="tblno">
+                      <option value="0" />테이블 선택
+                      <option value="1" />테이블 1번
+                      <option value="2" />테이블 2번
+                      <option value="3" />테이블 3번
+                    </select>
+                </nav>
+                <section class="festa">
+                    <table class="festa">
+                      <tr>  <!-- 이미지 -->
+                        <td>
+                          <img class="adimg" src="http://image.newsis.com/2015/12/10/NISI20151210_0006222738_web.jpg">
+                        </td>
+                        <td>
+                          <img class="adimg" src="http://www.speconomy.com/news/photo/201304/19855_9997_181.jpg">
+                        </td>
+                        <td>
+                          <img class="adimg" src="http://www.businesspost.co.kr/news/photo/201404/1208_2042_3720.jpg">
+                        </td>
+                      </tr>  
+                      <tr>  <!-- 상품명 -->
+                        <td>
+                          소주(2,000)
+                        </td>
+                        <td>
+                          맥주(3,000)
+                        </td>
+                        <td>
+                          막걸리(1,000)
+                        </td>
+                      </tr>  
+                      <tr>  <!-- 수량/가격 -->
+                        <td>
+                          <input type="number" id="d1" class="drink" title="소주" alt="2000"
+                                 min=0 max=10 value=0 onchange="calc(this, d1v)" />
+                          <label id="d1v" >0</label> 원
+                        </td>
+                        <td>
+                          <input type="number" id="d2" class="drink" title="맥주" alt="3000"
+                                 min=0 max=10 value=0 onchange="calc(this, d2v)" />
+                          <label id="d2v" >0</label> 원
+                        </td>
+                        <td>
+                          <input type="number" id="d3" class="drink" title="막걸리" alt="1000"
+                                 min=0 max=10 value=0 onchange="calc(this, d3v)" />
+                          <label id="d3v" >0</label> 원
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan=3 id="subtot" id="subdrink">소계 : <span id="subdrink"> </span></td>
+                      </tr>
+                      <tr>  <!-- 안주이미지 -->
+                        <td>
+                          <img class="foodimg" src="http://www.odengzip.com/wizstock/menu/1246428521.jpg">
+                        </td>
+                        <td>
+                          <img class="foodimg" src="http://img.ibtimes.com/kr/data/images/full/2013/05/13/20130513162600718.jpg">
+                        </td>
+                        <td>
+                          <img class="foodimg" src="http://www.odengzip.com/wizstock/menu/1246428598.jpg">
+                        </td>
+                      </tr>  
+                      <tr>  <!-- 상품명 -->
+                        <td>
+                          노가리(2,000)
+                        </td>
+                        <td>
+                          감자튀김(3,000)
+                        </td>
+                        <td>
+                          마른안주(1,000)
+                        </td>
+                      </tr>  
+                      <tr>  <!-- 수량/가격 -->
+                        <td>
+                          <input type="number" id="d4" class="drink" title="노가리" alt="2000"
+                                 min=0 max=10 value=0 onchange="calc(this, f1v)" />
+                          <label id="f1v" >0</label> 원
+                        </td>
+                        <td>
+                          <input type="number" id="d5" class="drink" title="감자튀김" alt="3000"
+                                 min=0 max=10 value=0 onchange="calc(this, f2v)" />
+                          <label id="f2v" >0</label> 원
+                        </td>
+                        <td>
+                          <input type="number" id="d6" class="drink" title="마른안주" alt="1000"
+                                 min=0 max=10 value=0 onchange="calc(this, f3v)" />
+                          <label id="f3v" >0</label> 원
+                        </td>
+                      </tr>   
+                      <tr>
+                        <td colspan=3 class="subtot" >소계 : <span id="subfood"> </span></td>
+                      </tr>
+                    </table>
+                    
+                    <button onclick="order()" >주문</button>
+                    <button onclick="cancel()" >취소</button>
+                    
+                  </section>
+            </div>
+            <div id="banner">
+                <marquee direction=up scrollamount=20>
+                    <img width=100px class="bannerImg" src="adidas-blue-logo.png">
+                    <img width=100px class="bannerImg" src="supreme-logo.jpg">
+                    <img width=100px class="bannerImg" src="nike-logo.png">
+                    <img width=100px class="bannerImg" src="vans-logo.png">
+                </marquee>
+            </div>
+            <div class="object" id="navigator">
+                <p>
+                    <button class="nav_button">뮤직스테이션
+                        <ul class="subMenu">
+                            <li class="subMenuList"><a href="music1.html">GroovyRoom</a></li>
+                            <li class="subMenuList">Heize</li>
+                        </ul>
+                    </button>
+                    <button class="nav_button"> 발표자료 
+                        <ul class="subMenu">
+                            <li class="subMenuList"><a>대학</a></li>
+                            <li class="subMenuList"><a href="ptclub.html">동아리</a></li>
+                            
+                        </ul>
+                    </button> 
+                    <button class="nav_button"> 자바스크립트 연습
+                        <ul class="subMenu">
+                            <li class="subMenuList"><a href="KWfestival.html">광운축제 주점</a></li>
+                        </ul>
+                    </button>
+                    <button  class="nav_button"> <a href="Project.html">HOME</a> </button>
+                </p>
+            </div>
+            <div class="object" id="footer">
+                @CHOI JUNMAN
+            </div>
+        </div>
+    </body>
+</html>
