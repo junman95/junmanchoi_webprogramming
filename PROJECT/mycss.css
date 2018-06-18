@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poor+Story');
 @import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
-
+body{
+    background-image: url('Sports.png');
+}
 pre{
     font-family: 'Poor Story',cursive;
 }
@@ -13,6 +15,51 @@ a{
 ul a{
     color:black;
 }
+
+/*이미지 슬라이더 제작 */
+.animation_canvas {
+    
+    width:100%;
+    height:100%;
+    position:absolute;
+    
+    overflow:hidden;
+}
+.slider_panel {
+    width:400%;
+    height: 10%;
+    position: relative;
+    
+ }
+.slider_image {
+    width:25%;
+    height:700%;
+    float:left;
+    
+ }
+.slider_text_panel {
+    top:50px;
+    left:37%;
+    position: relative;
+ }
+.silder_text {
+    width:250px;
+    height:150px;
+    position: absolute;
+}
+.control_panel {
+    position: absolute;
+    
+ }
+.control_button {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    float: left;
+    cursor: pointer;
+
+ }
+
 
 .object{
     border: 1px solid #bcbcbc;
@@ -189,6 +236,8 @@ h1{
     height:100%;
     width:70%;
     float:right; 
+    overflow: scroll;
+    position: absolute;
 }
 
 #content_ppt{

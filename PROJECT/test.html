@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+    <title> 웹 프로그래밍 </title>
+</HEAD>
+<style>
+    .animation_canvas {
+        width: 600px;
+        height: 400px;
+        position: relative;
+    }
+
+    .slider_panel {
+        width: 1800px;
+        position: relative;
+    }
+
+    .slider_image {
+        width: 600px;
+        height: 400px;
+        float: left;
+    }
+
+    .slider_text {
+        width: 250px;
+        height: 150px;
+        position: absolute;
+    }
+
+    .control_panel {
+        top: 500px;
+        left: 270px;
+        height: 13px;
+        position: absolute;
+        overflow: hidden;
+    }
+
+    .control_button {
+        width: 12px;
+        height: 46px;
+        position: relative;
+        float: left;
+        cursor: pointer;
+        /* background: url('point_button.png'); */
+    }
+
+    /*
+.control_button: hover { top: -16px; }
+.control_button: hover { top: -31px; }
+*/
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function () {
+        // 슬라이더를 움직여주는 함수
+        function moveSlider(index) {
+            // 슬라이더를 이동한다.
+            var willMoveLeft = -(index * 600);
+            $('.slider_panel').animate({ left: willMoveLeft }, 'slow');
+            // control_button 에 active 클래스를 부여/제거한다.
+            $('.control_button[data-index=' + index + ']').addClass('active');
+            $('.control_button[data-index=' + index + ']').removeClass('active');
+            // 글자를 이동한다.
+            $('.slider_text[data-index=' + index + ']').show().animate({ left: 0 }, 'slow');
+            $('.slider_text[data-index=' + index + ']').hide('slow', function () {
+                $(this).css('left', -300);
+            });
+        }
+        // 초기 텍스트 위치 지정 및 data-index 할당
+        $('slider_text').css('left', -300).each(function (index) {
+            $(this).attr('data-index', index);
+        });
+        // 컨트롤 버튼의 클릭 리스너 지정 및 data-index 할당
+        $('.control_button').each(function (index) {
+            (this).attr('data-index', index);
+        }).click(function () {
+            var index = $(this).attr('data-index');
+            moveSlider(index);
+        });
+        // 초기 슬라이더의 위치 지정
+        // var randomNumver = Math.round(Math.random() * 4);
+        // moveSlider(randomNumber);
+    });
+</script>
+
+<BODY>
+    <h1> Test Header </h1>
+    <div class="animation_canvas">
+        <div class="slider_panel">
+            <img class="slider_image" src="https://image.fmkorea.com/files/attach/new/20180615/486616/889837319/1105619116/0342d0cac1b9c803f4dbf79caf8288c2.jpg"
+            />
+            <img class="slider_image" src="https://image.fmkorea.com/files/attach/new/20180615/486616/889837319/1105619116/0342d0cac1b9c803f4dbf79caf8288c2.jpg"
+            />
+            <img class="slider_image" src="https://image.fmkorea.com/files/attach/new/20180615/486616/889837319/1105619116/0342d0cac1b9c803f4dbf79caf8288c2.jpg"
+            />
+        </div>
+        <div class="slider_text_panel">
+            <div class="slider_text">
+                <h1> 서두옥 </h1>
+                <p> 자유로운 영혼 </p>
+            </div>
+            <div class="slider_text">
+                <h1> Clickseo </h1>
+                <p> Clickseo.com </p>
+            </div>
+            <div class="slider_text">
+                <h1> iClickseo </h1>
+                <p> iClickseo.com </p>
+            </div>
+        </div>
+        <div class="control_panel">
+            <div class="control_button"> 1 </div>
+            <div class="control_button "> 2 </div>
+            <div class="control_button "> 3 </div>
+        </div>
+    </div>
+    <h1> Test Footer </h1>
+</BODY>
+<HTML>
