@@ -71,7 +71,6 @@ $(document).ready(function () {
         //클릭된 버튼 채워진버튼으로 교체
         $(this).attr('src', 'https://kr.seaicons.com/wp-content/uploads/2015/07/playstation-circle-black-and-white-icon.png');
 
-
         var index = $(this).attr('data-index');
         moveSlider(index);
     });
@@ -84,9 +83,6 @@ $(document).ready(function () {
         var index = $(this).attr('data-index');
         moveSlider(index);
     });
-    // 초기 슬라이더의 위치 지정
-    // var randomNumver = Math.round(Math.random() * 4);
-    // moveSlider(randomNumber);
 });
 
 //헤더이미지 변경
@@ -103,7 +99,6 @@ $(document).ready(function () {
             $(this).each(function (index) {
                 index = num % 3;
                 var item = img_idx[index];
-
 
                 $(this).css('background-image', 'url(' + item.src + ')');
                 $(this).css('background-size', '100%');

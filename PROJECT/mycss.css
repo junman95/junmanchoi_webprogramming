@@ -18,18 +18,15 @@ ul a{
 
 /*이미지 슬라이더 제작 */
 .animation_canvas {
-    
     width:100%;
     height:100%;
     position:absolute;
-    
     overflow:hidden;
 }
 .slider_panel {
     width:400%;
     height: 10%;
     position: relative;
-    
  }
 .slider_image {
     width:25%;
@@ -49,7 +46,6 @@ ul a{
 }
 .control_panel {
     position: absolute;
-    
  }
 .control_button {
     width: 20px;
@@ -57,7 +53,6 @@ ul a{
     position: relative;
     float: left;
     cursor: pointer;
-
  }
 
 
@@ -69,11 +64,11 @@ ul a{
 }
 
 #navigator{
-    width:76.7%;
+    width:80%;
     position:fixed;
     top:0;
     text-align: right;
-    padding-right: 50px;
+    
     color:white;
     margin-top:-10px;
     border-radius: 0;
@@ -136,7 +131,8 @@ ul a{
     margin-left: 10%;
     margin-right: 10%;
     width:80%;
-    padding:20px;
+    padding-top:20px;
+    padding-bottom:20px;
     
 }
 
@@ -247,6 +243,7 @@ h1{
 #footer{
     background-color:darkcyan;
     clear:both;
+    cursor: help;
 }
 
 #banner{
